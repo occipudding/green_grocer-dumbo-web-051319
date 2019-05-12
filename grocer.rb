@@ -19,6 +19,7 @@ def apply_coupons(cart, coupons)
   new_cart = cart.clone
   coupons.each do |coupon|
     item_with_coupon = "#{coupon[:item]} W/COUPON"
+    binding.pry
     if new_cart.key?(coupon[:item]) && new_cart[coupon[:item]][:count] >= coupon[:num]
       new_cart[coupon[:item]][:count] -= coupon[:num]
       if new_cart.key?(item_with_coupon)
@@ -33,7 +34,6 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  binding.pry
   new_cart
 end
 

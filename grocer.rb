@@ -16,23 +16,24 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  new_cart = cart.clone
   coupons.each do |coupon|
     item_with_coupon = "#{coupon[:item]} W/COUPON"
-    if cart.key?(coupon[:item]) && cart[coupon[:item]][:count] >= coupon[:num]
-      cart[coupon[:item]][:count] -= coupon[:num]
-      if cart.key?(item_with_coupon)
-        cart[item_with_coupon][:count] += 1
+    if new_cart.key?(coupon[:item]) && new_cart[coupon[:item]][:count] >= coupon[:num]
+      new_cart[coupon[:item]][:count] -= coupon[:num]
+      if new_cart.key?(item_with_coupon)
+        new_cart[item_with_coupon][:count] += 1
       else
-        cart[item_with_coupon][:clearance] = cart[coupon[:item]][:clearance]
-        cart[item_with_coupon][:price] = coupon[:cost]
-        cart[item_with_coupon][:count] = 1
+        new_cart[item_with_coupon] = new_cart[coupon[:item]].clone
+        new_cart[item_with_coupon][:price] = coupon[:cost]
+        new_cart[item_with_coupon][:count] = 1
       end
-      if cart[coupon[:item]][:count] == 0
-        cart.delete(coupon[:item])
+      if new_cart[coupon[:item]][:count] == 0
+        new_cart.delete(coupon[:item])
       end
     end
   end
-  cart
+  binding.pry
 end
 
 def apply_clearance(cart)

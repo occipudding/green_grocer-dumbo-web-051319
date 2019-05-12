@@ -29,4 +29,5 @@ end
 
 #consolidate_cart([{"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"KALE"=>{:price=>3.0, :clearance=>false}}])
 
-apply_coupons()
+apply_coupons({"CHEESE"=>{:price=>6.5, :clearance=>false, :count=>4},
+ "AVOCADO"=>{:price=>3.0, :clearance=>true, :count=>3}}, )

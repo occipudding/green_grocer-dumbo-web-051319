@@ -45,6 +45,13 @@ end
 
 def checkout(cart, coupons)
   new_cart = apply_clearance(consolidate_cart(cart))
+  total = 0
+  new_cart.each do |h|
+    h.each do |item, data|
+      total += data[:price] * data[:count]
+    end
+  end
+  total
 end
 
 #consolidate_cart([{"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"KALE"=>{:price=>3.0, :clearance=>false}}])

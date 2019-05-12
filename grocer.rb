@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   new_cart.each do |k, v|
     total += v[:price] * v[:count]
   end
-  binding.pry
+  total
 end
 
 #consolidate_cart([{"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"KALE"=>{:price=>3.0, :clearance=>false}}])

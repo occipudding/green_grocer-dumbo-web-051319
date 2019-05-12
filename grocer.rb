@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
       if cart.key?(item_with_coupon)
         cart[item_with_coupon][:count] += 1
       else
-        cart[item_with_coupon] = cart[coupon[:item]].clone
+        cart[item_with_coupon][:clearance] = cart[coupon[:item]][:clearance]
         cart[item_with_coupon][:price] = coupon[:cost]
         cart[item_with_coupon][:count] = 1
       end

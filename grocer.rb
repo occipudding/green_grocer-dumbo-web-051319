@@ -4,7 +4,11 @@ def consolidate_cart(cart)
   new_cart = {}
   cart.each do |h|
     h.each do |k, v|
-      binding.pry
+      if !new_cart.key?(k)
+        
+      else
+        
+      end
     end
   end
 end

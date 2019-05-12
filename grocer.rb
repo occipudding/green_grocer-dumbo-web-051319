@@ -44,6 +44,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
+  consolidate_cart(cart)
   binding.pry
 end
 
@@ -51,4 +52,4 @@ end
 
 #apply_coupons({"CHEESE"=>{:price=>6.5, :clearance=>false, :count=>4}, "AVOCADO"=>{:price=>3.0, :clearance=>true, :count=>3}}, [{:item=>"AVOCADO", :num=>2, :cost=>5.0}, {:item=>"CHEESE", :num=>3, :cost=>15.0}])
 
-checkout([{"BEETS"=>{:price=>2.5, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}], coupons)
+#checkout([{"BEETS"=>{:price=>2.5, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}, {"BEER"=>{:price=>13.0, :clearance=>false}}], [{:item=>"BEER", :num=>2, :cost=>20.0}])

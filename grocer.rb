@@ -3,7 +3,9 @@ require 'pry'
 def consolidate_cart(cart)
   new_cart = {}
   cart.each do |h|
-    binding.pry
+    h.each do |k, v|
+      binding.pry
+    end
   end
 end
 

@@ -44,7 +44,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
+  binding.pry
 end
 
 #consolidate_cart([{"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"AVOCADO"=>{:price=>3.0, :clearance=>true}}, {"KALE"=>{:price=>3.0, :clearance=>false}}])

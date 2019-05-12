@@ -45,17 +45,16 @@ end
 
 def checkout(cart, coupons)
   total = 0
-  binding.pry
   new_cart = consolidate_cart(cart)
   new_cart.each do |h|
     h.each do |k, v|
       total += v[:price] * v[:count]
     end
   end
+  binding.pry
   if total > 100
     total -= total * 0.1
   end
-  binding.pry
   total
 end
 

@@ -1,7 +1,8 @@
 require 'pry'
 
 def consolidate_cart(cart)
-  binding.pry
+  new_cart = {}
+  cart
 end
 
 def apply_coupons(cart, coupons)
@@ -17,7 +18,7 @@ def checkout(cart, coupons)
 end
 
 =begin
-consolidate_cart([{"TEMPEH"=>{:price=>3.0, :clearance=>true}},
- {"PEANUTBUTTER"=>{:price=>3.0, :clearance=>true}},
- {"ALMONDS"=>{:price=>9.0, :clearance=>false}}])
+consolidate_cart([{"AVOCADO"=>{:price=>3.0, :clearance=>true}},
+ {"AVOCADO"=>{:price=>3.0, :clearance=>true}},
+ {"KALE"=>{:price=>3.0, :clearance=>false}}])
  =end

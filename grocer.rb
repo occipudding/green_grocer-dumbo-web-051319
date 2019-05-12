@@ -16,4 +16,8 @@ def checkout(cart, coupons)
   # code here
 end
 
-#consolidate_cart(cart)
+=begin
+consolidate_cart([{"TEMPEH"=>{:price=>3.0, :clearance=>true}},
+ {"PEANUTBUTTER"=>{:price=>3.0, :clearance=>true}},
+ {"ALMONDS"=>{:price=>9.0, :clearance=>false}}])
+ =end

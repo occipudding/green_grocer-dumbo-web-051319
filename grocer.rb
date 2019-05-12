@@ -5,12 +5,14 @@ def consolidate_cart(cart)
   cart.each do |h|
     h.each do |k, v|
       if !new_cart.key?(k)
-        
+        new_cart[k] = v.clone
+        new_cart[k][:count] = 1
       else
-        
+        new_cart[k][:count] += 1
       end
     end
   end
+  new_cart
 end
 
 def apply_coupons(cart, coupons)

@@ -30,9 +30,6 @@ def apply_coupons(cart, coupons)
         cart[item_with_coupon][:price] = coupon[:cost]
         cart[item_with_coupon][:count] = 1
       end
-      if cart[coupon[:item]][:count] == 0
-        cart.delete(coupon[:item])
-      end
     end
   end
   cart

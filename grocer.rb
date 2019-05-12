@@ -16,6 +16,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  binding.pry
   new_cart = cart.clone
   coupons.each do |coupon|
     item_with_coupon = "#{coupon[:item]} W/COUPON"
@@ -33,7 +34,7 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  binding.pry
+  #binding.pry
 end
 
 def apply_clearance(cart)
